@@ -28,8 +28,11 @@ export class SoundService {
     this.inited = true;
     const audio = this.audioElements.get(soundName);
 
-    if (audio && audio.fastSeek) {
+    if (audio?.fastSeek) {
       audio.fastSeek(0);
+    }
+    if (audio) {
+      audio.currentTime = 0;
       audio.play();
     } else {
       console.error(`Sound not preloaded: ${soundName}`);
