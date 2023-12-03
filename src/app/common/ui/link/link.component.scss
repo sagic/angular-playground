@@ -1,0 +1,17 @@
+.link {
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  border: 2px solid var(--color-foreground);
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+
+  &:visited {
+    color: var(--color-foreground);
+  }
+}
