@@ -1,0 +1,74 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th
+          *ngFor="let column of columns"
+          (click)="onHeaderClick(column)"
+          [style.width]="column.width || 'auto'"
+          [style.minWidth]="column.width || 'auto'"
+        >
+          {{ column.label }}
+          <div *ngIf="sortable" class="sort-icon">
+            {{
+              column.id === sortColumn
+                ? sortOrder === "asc"
+                  ? "&nbsp;&nbsp;↑"
+                  : "&nbsp;&nbsp;↓"
+                : ""
+            }}
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of pageData">
+        <td
+          *ngFor="let column of columns"
+          [style.width]="column.width || 'auto'"
+          [style.minWidth]="column.width || 'auto'"
+        >
+          {{
+            column.valueFormatter
+              ? column.valueFormatter(item[column.id])
+              : item[column.id]
+          }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div
+  *ngIf="pagination"
+  class="pagination-container"
+  [style.paddingBottom]="pagination ? '1rem' : 0"
+>
+  <uipath-button
+    (buttonClick)="changePage(-1)"
+    [disabled]="currentPage === 1"
+    label="Previous"
+  >
+  </uipath-button>
+  <div>
+    <span
+      >Page {{ currentPage }} of {{ numOfPages }} ({{ numOfItems }} items)</span
+    >
+    <span>&nbsp;&nbsp;&nbsp;Page size of </span>
+    <select id="colorInput" (change)="changePageSize($event)">
+      <option
+        *ngFor="let size of pageSizes"
+        [value]="size"
+        [selected]="size === pageSize"
+      >
+        {{ size }}
+      </option>
+    </select>
+    <span> items</span>
+  </div>
+  <uipath-button
+    (buttonClick)="changePage(1)"
+    [disabled]="currentPage === numOfPages"
+    label="Next"
+  >
+  </uipath-button>
+</div>

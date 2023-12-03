@@ -1,0 +1,75 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 1rem 1rem 0rem;
+  border: 2px solid var(--color-foreground);
+}
+
+.table-container {
+  flex: 1;
+  overflow: auto;
+  border: 2px solid var(--color-background);
+}
+
+table {
+  min-width: 100%;
+  border: 0;
+  border-collapse: separate;
+}
+
+th {
+  position: relative;
+  cursor: pointer;
+  background: var(--color-foreground);
+  color: var(--color-background);
+  padding: 1rem 3rem 1rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+  text-transform: uppercase;
+  border: 2px solid var(--color-foreground);
+
+  .sort-icon {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translate(0, -55%);
+    font-size: 90%;
+  }
+
+  &:first-child {
+    z-index: 1;
+    position: sticky;
+    left: 0;
+  }
+}
+
+td {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  padding: 0.5rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--color-foreground);
+  background: var(--color-background);
+
+  &:first-child {
+    z-index: 1;
+    position: sticky;
+    left: 0;
+    border-bottom: 4px solid var(--color-foreground);
+    color: var(--color-foreground);
+    font-size: 110%;
+  }
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-top: 2px dashed var(--color-foreground);
+}
