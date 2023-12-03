@@ -1,0 +1,67 @@
+<div class="welcome" *ngIf="!soundService.inited">
+  <div>
+    <span [style.fontSize]="'125%'">
+      🚀 Welcome UiPath Team to the RetroCode Adventure Results! 🎮
+    </span>
+    <br />
+    <br />
+    Step into a world where code meets nostalgia 🌟, and your challenge results
+    await! Brace yourselves for a journey through the enchanting realms of
+    Angular, where modern styling meets retro charm. 🕹️💼
+    <br />
+    <br />
+    Behold the magic of your two crafted components: the dazzling DataGrid,
+    featuring sortable headers, pagination, and a pinch of pixelated flair. And
+    don't miss the Progress Indicator, gracefully filling circles with retro
+    vibes. 🔄📊 Unit tests? Check. OnPush strategy? Perhaps. Angular magic, rxjs
+    spells, and scss wizardry? Absolutely! You've woven an enchanting tale of
+    code. 🧙✨
+    <br />
+    <br />
+    Now, dear UiPath Team, venture forth, explore the pixelated wonders, and may
+    your review be as thrilling as a final boss battle! 🚀🌟
+    <br />
+    <br />
+    <span [style.fontSize]="'75%'"
+      >(And just between us, this message was AI-crafted. 🤖💻)</span
+    >
+    <br />
+
+    <br />
+    <span [style.fontSize]="'125%'"
+      >(!) Caution: This web app loves to make some noise! Consider muting your
+      machine unless you're ready to turn your neighbors into the audience of
+      your unintentional concert. 🎶🔊</span
+    >
+    <br />
+    <br />
+    <span>Author: Sagi Chizik</span>
+    <br />
+  </div>
+  <div>
+    <uipath-button
+      (buttonClick)="handleStartClick()"
+      [label]="'Start'"
+    ></uipath-button>
+  </div>
+  <div>
+    <a href="http://github.com" target="_blank">Github Repo</a>
+  </div>
+</div>
+<div class="links" *ngIf="soundService.inited">
+  <div>
+    <uipath-link
+      href="/stories/data-grid-story"
+      label="Data Grid Story"
+    ></uipath-link>
+  </div>
+  <div>
+    <uipath-link
+      href="/stories/progress-story"
+      label="Circular Progress Indicator Story"
+    ></uipath-link>
+  </div>
+  <div>
+    <a href="http://github.com" target="_blank">Github Repo</a>
+  </div>
+</div>

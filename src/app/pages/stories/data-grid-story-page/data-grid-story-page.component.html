@@ -1,0 +1,23 @@
+<div class="header">
+  <uipath-link href="/" label="Back"></uipath-link>
+  <div class="tools-container">
+    <label for="datasetInput">Select a dataset: </label>
+    <select id="datasetInput" (change)="handleDatasetChange($event)">
+      <option
+        *ngFor="let d of predefinedDatasets"
+        [value]="d"
+        [selected]="dataset === d"
+      >
+        {{ d }}
+      </option>
+    </select>
+  </div>
+</div>
+<div class="stage-container">
+  <uipath-nbaplayers-report
+    *ngIf="dataset === 'nba'"
+  ></uipath-nbaplayers-report>
+  <uipath-nobel-prizes-report
+    *ngIf="dataset === 'nobel'"
+  ></uipath-nobel-prizes-report>
+</div>

@@ -1,0 +1,36 @@
+<div class="header">
+  <uipath-link href="/" label="Back"></uipath-link>
+  <div class="tools-container">
+    <label for="radiusInput">Radius:</label>
+    <input
+      id="radiusInput"
+      [(ngModel)]="radius"
+      type="number"
+      min="10"
+      max="500"
+      step="10"
+    />
+    <label for="progressInput">Progress:</label>
+    <input
+      id="progressInput"
+      [(ngModel)]="progress"
+      type="number"
+      min="0"
+      max="100"
+      step="10"
+    />
+    <label for="colorInput">Select a color: </label>
+    <select id="colorInput" [(ngModel)]="color">
+      <option *ngFor="let c of predefinedColors" [value]="c">
+        {{ c }}
+      </option>
+    </select>
+  </div>
+</div>
+<div class="stage-container">
+  <uipath-progress-circular
+    [color]="color"
+    [progress]="progress"
+    [radius]="radius"
+  ></uipath-progress-circular>
+</div>

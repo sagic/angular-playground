@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome {
+  width: 80vw;
+  min-width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 140%;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: min-content;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
