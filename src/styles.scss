@@ -1,1 +1,81 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+html {
+  --color-background: #33ff33;
+  --color-foreground: #282828;
+
+  @media (prefers-color-scheme: dark) {
+    --color-background: #282828;
+    --color-foreground: #33ff33;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+body {
+  background: var(--color-background);
+  scrollbar-color: var(--color-foreground) var(--color-background);
+}
+
+body,
+button,
+a,
+input,
+select {
+  font-family: "VT323", monospace;
+  font-size: 18px;
+  color: var(--color-foreground);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-foreground);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-foreground);
+}
+
+input {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  min-width: 100px;
+  padding: 0.5rem 0.5rem;
+  border: 2px solid var(--color-foreground);
+  border-radius: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+select {
+  padding: 0.5rem;
+  font-size: inherit;
+  border: 2px solid var(--color-foreground);
+  border-radius: 0px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--color-background);
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+}
