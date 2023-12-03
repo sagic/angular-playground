@@ -1,0 +1,24 @@
+<svg class="circle" [attr.width]="diameter" [attr.height]="diameter">
+  <circle
+    class="circle-bg"
+    [attr.cx]="radius"
+    [attr.cy]="radius"
+    [attr.r]="radius * (innerCirclePercent - fixSVGEdgeCut)"
+    [attr.stroke]="'var(--color-foreground)'"
+    stroke-opacity="0.2"
+    [attr.stroke-width]="radius * 0.2"
+    fill="none"
+  />
+  <circle
+    class="circle-fg"
+    [attr.cx]="radius"
+    [attr.cy]="radius"
+    [attr.r]="radius * (innerCirclePercent - fixSVGEdgeCut)"
+    [attr.stroke]="color"
+    [attr.stroke-width]="radius * ((1 - innerCirclePercent) * 2)"
+    [attr.stroke-dashoffset]="dashOffset"
+    [attr.stroke-dasharray]="dashArray"
+    stroke-linecap="butt"
+    fill="none"
+  />
+</svg>
